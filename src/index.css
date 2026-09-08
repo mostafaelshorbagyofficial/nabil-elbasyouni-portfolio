@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #C5A059;
+    --gold-light: #E1C16E;
+    --gold-dark: #8C6D2B;
+
+    /* Transition Easing */
+    --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* DARK THEME (Primary Experience) */
+  html.dark {
+    --bg-main: #0B0C0E;
+    --bg-card: #15171B;
+    --bg-card-hover: #1C1F26;
+    --bg-placeholder: #101114;
+    --text-primary: #EFECE6;
+    --text-secondary: #9DA3AF;
+    --border-color: rgba(197, 160, 89, 0.25);
+    --border-hover: rgba(197, 160, 89, 0.6);
+    --header-bg: rgba(11, 12, 14, 0.88);
+  }
+
+  /* LIGHT THEME (Dedicated Executive Theme) */
+  html.light {
+    --bg-main: #FAFAFA;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F4F1EA;
+    --bg-placeholder: #F0EDE5;
+    --text-primary: #15171B;
+    --text-secondary: #5A606E;
+    --border-color: rgba(197, 160, 89, 0.3);
+    --border-hover: rgba(197, 160, 89, 0.8);
+    --header-bg: rgba(250, 250, 250, 0.92);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 500ms var(--ease-luxury), color 500ms var(--ease-luxury);
+  }
+
+  html[dir="rtl"] body {
+    font-family: 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Luxury Restrained Easing Utility Classes */
+* {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Background Engineering Blueprint Overlay Pattern */
+.bg-blueprint-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Theme Utilities */
+.bg-theme-main { background-color: var(--bg-main); }
+.bg-theme-card { background-color: var(--bg-card); }
+.bg-theme-placeholder { background-color: var(--bg-placeholder); }
+.text-theme-title { color: var(--text-primary); }
+.text-theme-sub { color: var(--text-secondary); }
+.border-theme { border-color: var(--border-color); }
+
+/* Metallic Gold Gradients (Consistent across both Dark & Light) */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F7E7B4 0%, #C5A059 50%, #9E7D3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #E1C16E 0%, #C5A059 50%, #9E7D3B 100%);
+}
+
+.bg-gold-gradient-hover {
+  background: linear-gradient(135deg, #F0CF68 0%, #D4AF37 50%, #B89742 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #333642;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
